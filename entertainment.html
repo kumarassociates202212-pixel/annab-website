@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Entertainment Games | ANNAB Digital Services</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',Arial,sans-serif;
+  background:#0b0f19;
+  color:#e5e7eb;
+}
+
+/* NAV */
+nav{
+  background:#020617;
+  padding:15px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  z-index:999;
+  border-bottom:1px solid #1f2937;
+}
+nav a{
+  color:#38bdf8;
+  margin:0 15px;
+  text-decoration:none;
+  font-weight:600;
+}
+nav a:hover{color:#22c55e}
+
+/* HEADER */
+.header{
+  background:
+  linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+  url('https://images.unsplash.com/photo-1542751110-97427bbecf20');
+  background-size:cover;
+  background-position:center;
+  padding:110px 20px;
+  text-align:center;
+}
+.header h1{
+  font-size:44px;
+  color:#22c55e;
+}
+.header p{
+  max-width:750px;
+  margin:15px auto;
+  font-size:18px;
+  color:#c7d2fe;
+}
+
+/* SECTION */
+.section{
+  padding:80px 10%;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:35px;
+}
+
+/* CARD */
+.card{
+  background:#020617;
+  padding:26px;
+  border-radius:22px;
+  box-shadow:0 20px 50px rgba(0,0,0,.7);
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  transition:0.4s;
+  border:1px solid #1f2937;
+}
+.card:hover{
+  transform:translateY(-12px) scale(1.02);
+  border-color:#22c55e;
+}
+
+/* NEON SHINE */
+.card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(34,197,94,.25),transparent);
+  transition:0.7s;
+}
+.card:hover::before{
+  left:100%;
+}
+
+/* IMAGE */
+.card img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+  border-radius:16px;
+  margin-bottom:15px;
+}
+
+/* ICON */
+.card i{
+  font-size:38px;
+  color:#38bdf8;
+  margin-bottom:8px;
+}
+
+/* TITLE */
+.card h3{
+  color:#22c55e;
+  margin-bottom:8px;
+}
+
+/* BUTTON */
+.demo{
+  display:inline-block;
+  margin-top:14px;
+  background:#22c55e;
+  color:#020617;
+  padding:11px 26px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:700;
+  transition:0.3s;
+}
+.demo:hover{
+  background:#38bdf8;
+  color:#020617;
+  box-shadow:0 0 20px rgba(56,189,248,.9);
+}
+
+/* DISCLAIMER */
+.note{
+  background:#020617;
+  border-left:6px solid #facc15;
+  padding:24px;
+  margin-top:60px;
+  font-weight:600;
+  border-radius:14px;
+  color:#fde68a;
+}
+
+/* FOOTER */
+footer{
+  background:#020617;
+  color:#9ca3af;
+  text-align:center;
+  padding:24px;
+  border-top:1px solid #1f2937;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="entertainment.html">Entertainment</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<div class="header">
+  <h1>Entertainment Games</h1>
+  <p>Dark Gaming Zone – Fun & Casual Games (Entertainment Only)</p>
+</div>
+
+<div class="section">
+  <div class="grid">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1611996575749-79a3a250f948">
+      <i class="fa-solid fa-dice"></i>
+      <h3>Ludo Game</h3>
+      <p>Classic board game for pure entertainment.</p>
+      <a class="demo" href="#">Play Demo</a>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+      <i class="fa-solid fa-puzzle-piece"></i>
+      <h3>Puzzle Games</h3>
+      <p>Mind-refreshing logic & puzzle challenges.</p>
+      <a class="demo" href="#">Play Demo</a>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1629904853716-f0bc54eea481">
+      <i class="fa-solid fa-apple-whole"></i>
+      <h3>Fruit Cutting</h3>
+      <p>Fast-paced slicing fun & arcade style play.</p>
+      <a class="demo" href="#">Play Demo</a>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1610878180933-123728745d22">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <h3>Shopping Games</h3>
+      <p>Virtual shopping & simulation entertainment.</p>
+      <a class="demo" href="#">Play Demo</a>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6">
+      <i class="fa-solid fa-circle-dot"></i>
+      <h3>Bubble Shooter</h3>
+      <p>Bubble popping arcade-style casual fun.</p>
+      <a class="demo" href="#">Play Demo</a>
+    </div>
+
+  </div>
+
+  <div class="note">
+    ⚠ <strong>Important Disclaimer:</strong><br>
+    All games displayed on this page are provided strictly for
+    <strong>ENTERTAINMENT PURPOSES ONLY</strong>.<br>
+    We do <strong>NOT</strong> offer gambling, betting, real-money games,
+    cash rewards, or prize-based gaming of any kind.
+  </div>
+</div>
+
+<footer>
+© 2025 ANNAB Digital Services. All Rights Reserved.
+</footer>
+
+</body>
+</html>
