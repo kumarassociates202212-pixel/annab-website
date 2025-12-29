@@ -1,129 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>ANNAB Digital Services | Entertainment & Casual Games</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO -->
-  <meta name="description" content="Entertainment & casual games. No money, no gambling, just fun. Powered by ANNAB Digital Services.">
-  <meta name="keywords" content="casual games, entertainment games, free games, no gambling">
-  <meta name="author" content="ANNAB Digital Services">
+<title>ANNAB Digital Services | Entertainment & Casual Games</title>
 
-  <!-- Favicon -->
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/13/13973.png">
+<meta name="description" content="ANNAB Digital Services offers entertainment & casual games. No money, no gambling – just fun.">
+<meta name="keywords" content="ANNAB, casual games, entertainment games, no gambling games">
+<meta name="author" content="ANNAB Digital Services">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+<link rel="icon" href="favicon.ico">
 
-    body {
-      min-height: 100vh;
-      background: radial-gradient(circle at top, #0b1a3a, #020617);
-      color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{
+background:radial-gradient(circle at top,#0b1a3a,#020814);
+color:#fff;
+min-height:100vh;
+}
 
-    h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-      text-align: center;
-    }
+/* NAVBAR */
+nav{
+background:#0a3cff;
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+nav h1{font-size:20px}
+nav a{
+color:#aee6ff;
+text-decoration:none;
+margin-left:20px;
+font-weight:600;
+}
+nav a:hover{color:#fff}
 
-    .subtitle {
-      color: #cbd5f5;
-      margin-bottom: 50px;
-      text-align: center;
-      font-size: 16px;
-    }
+/* HERO */
+.hero{
+text-align:center;
+padding:80px 20px;
+}
+.hero h2{
+font-size:38px;
+margin-bottom:10px;
+}
+.hero p{
+color:#cfe8ff;
+font-size:16px;
+}
 
-    .cards {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+/* CARDS */
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+padding:60px;
+max-width:1100px;
+margin:auto;
+}
+.card{
+background:linear-gradient(145deg,#07122d,#02091c);
+border-radius:20px;
+padding:50px 20px;
+text-align:center;
+box-shadow:0 0 40px rgba(0,150,255,0.15);
+transition:.4s;
+cursor:pointer;
+}
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 0 60px rgba(0,180,255,0.35);
+}
+.card img{
+width:40px;
+margin-bottom:15px;
+}
+.card h3{
+font-size:20px;
+}
 
-    .card {
-      width: 300px;
-      height: 140px;
-      background: linear-gradient(145deg, #0f1f3d, #07122a);
-      border-radius: 18px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 25px rgba(0,0,0,0.6);
-      transition: all 0.3s ease;
-      cursor: default;
-    }
+/* FOOTER */
+footer{
+text-align:center;
+padding:30px;
+color:#9fb7ff;
+font-size:14px;
+}
 
-    .card:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 0 40px rgba(59,130,246,0.4);
-    }
-
-    .icon {
-      font-size: 26px;
-      margin-bottom: 12px;
-    }
-
-    .card h3 {
-      font-size: 22px;
-      font-weight: 600;
-    }
-
-    footer {
-      position: absolute;
-      bottom: 25px;
-      color: #9ca3af;
-      font-size: 14px;
-      text-align: center;
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 32px;
-      }
-      .card {
-        width: 260px;
-      }
-    }
-  </style>
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+right:25px;
+bottom:25px;
+background:#25d366;
+color:#000;
+padding:15px 22px;
+border-radius:40px;
+font-weight:bold;
+text-decoration:none;
+box-shadow:0 0 25px rgba(0,0,0,0.5);
+}
+.whatsapp:hover{background:#1ebd5a}
+</style>
 </head>
 
 <body>
 
-  <h1>Entertainment & Casual Games</h1>
-  <div class="subtitle">No money • No gambling • Just fun</div>
+<nav>
+<h1>ANNAB Digital Services</h1>
+<div>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="entertainment.html">Entertainment</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+</nav>
 
-  <div class="cards">
-    <div class="card">
-      <div class="icon">🌍</div>
-      <h3>Chess</h3>
-    </div>
+<section class="hero">
+<h2>Entertainment & Casual Games</h2>
+<p>No money • No gambling • Just fun</p>
+</section>
 
-    <div class="card">
-      <div class="icon">🌍</div>
-      <h3>Fruit Cutting</h3>
-    </div>
+<section class="cards">
+<div class="card">
+<img src="images/chess.png" alt="">
+<h3>Chess</h3>
+</div>
+<div class="card">
+<img src="images/fruit.png" alt="">
+<h3>Fruit Cutting</h3>
+</div>
+<div class="card">
+<img src="images/bubble.png" alt="">
+<h3>Bubble Game</h3>
+</div>
+</section>
 
-    <div class="card">
-      <div class="icon">🌍</div>
-      <h3>Bubble Game</h3>
-    </div>
-  </div>
+<footer>
+© 2025 ANNAB Digital Services. All rights reserved.
+</footer>
 
-  <footer>
-    © 2025 ANNAB Digital Services
-  </footer>
+<a class="whatsapp" 
+href="https://wa.me/91XXXXXXXXXX?text=Hello%20ANNAB%20Digital%20Services" 
+target="_blank">
+Chat on WhatsApp
+</a>
 
 </body>
 </html>
