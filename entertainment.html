@@ -2,27 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Entertainment | ANNAB.live</title>
+<title>Entertainment Games | ANNAB</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Casual entertainment games. Just fun, no gambling.">
 <link rel="icon" href="images/favicon.png">
-
 <style>
 body{margin:0;font-family:Arial;background:#020617;color:#fff}
-header,nav{text-align:center;background:#0a2cff;padding:15px}
-nav a{color:#00ffd5;margin:0 15px;text-decoration:none}
-.slider{overflow:hidden;margin:40px;border-radius:20px}
-.slides{display:flex;width:500%;animation:slide 18s infinite}
-.slides img{width:100%}
-@keyframes slide{
-0%{transform:translateX(0)}
-25%{transform:translateX(-100%)}
-50%{transform:translateX(-200%)}
-75%{transform:translateX(-300%)}
-100%{transform:translateX(-400%)}
-}
+header,nav{background:#0b3cff;text-align:center}
+nav a{color:#9ffcff;margin:0 15px;text-decoration:none;font-weight:bold}
+section{padding:60px 30px;text-align:center}
+.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:1000px;margin:auto}
+.game{background:#08122a;padding:20px;border-radius:16px}
+.game img{width:100%;border-radius:12px}
+footer{text-align:center;padding:20px;opacity:.7}
 </style>
 </head>
-
 <body>
+
 <header>ANNAB Digital Services</header>
 <nav>
 <a href="index.html">Home</a>
@@ -32,19 +28,17 @@ nav a{color:#00ffd5;margin:0 15px;text-decoration:none}
 <a href="contact.html">Contact</a>
 </nav>
 
-<h1 style="text-align:center;margin-top:30px">
-Entertainment & Casual Games
-</h1>
-<p style="text-align:center">No money • No gambling • Just fun</p>
+<section>
+<h1>Entertainment & Casual Games</h1>
+<p>No money • No gambling • Just fun</p>
 
-<div class="slider">
-<div class="slides">
-<img src="images/board-dice-game.jpg">
-<img src="images/bubble-game.jpg">
-<img src="images/chess-board-dark.jpg">
-<img src="images/fruit-cutting-game.jpg">
-<img src="images/target-aim-game.jpg">
+<div class="games">
+<div class="game"><img src="images/chess-board-dark.jpg"><h3>Chess</h3></div>
+<div class="game"><img src="images/fruit-cutting.jpg"><h3>Fruit Cutting</h3></div>
+<div class="game"><img src="images/bubble-game.jpg"><h3>Bubble Game</h3></div>
 </div>
-</div>
+</section>
+
+<footer>© 2025 ANNAB Digital Services</footer>
 </body>
 </html>
