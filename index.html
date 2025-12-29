@@ -1,58 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<title>ANNAB Digital Services – Entertainment & Casual Games</title>
-
-<!-- SEO -->
-<meta name="description" content="ANNAB Digital Services provides safe, free entertainment & casual games. No money, no gambling – just fun." />
-<meta name="keywords" content="casual games, free games, no gambling, entertainment games, ANNAB" />
-<meta name="author" content="ANNAB Digital Services" />
-
-<!-- OpenGraph (Facebook / WhatsApp Preview) -->
-<meta property="og:title" content="ANNAB Digital Services" />
-<meta property="og:description" content="Free entertainment & casual games. No money. No gambling. Just fun." />
-<meta property="og:type" content="website" />
-<meta property="og:image" content="images/preview.jpg" />
-
-<!-- Favicon -->
-<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<meta charset="UTF-8">
+<title>ANNAB Digital Services – Entertainment Games</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ANNAB Digital Services provides safe entertainment & casual games. No money, no gambling, just fun.">
+<meta name="keywords" content="entertainment games, casual games, chess game, fruit cutting game, bubble game">
+<meta name="author" content="ANNAB Digital Services">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial,sans-serif}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
 body{
-background:radial-gradient(circle at top,#1242ff,#020b2a 60%);
+background:radial-gradient(circle at top,#1e40ff,#020617);
 color:#fff;
-min-height:100vh;
 }
 
-/* NAV */
-header{
-background:#1242ff;
-padding:18px 40px;
+/* NAVBAR */
+nav{
+background:#1145ff;
+padding:15px 40px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 }
-header h1{font-size:22px}
+nav h1{font-size:22px;font-weight:700}
 nav a{
 color:#fff;
-margin-left:20px;
 text-decoration:none;
+margin-left:25px;
 font-weight:500;
 }
-nav a:hover{opacity:.8}
 
 /* HERO */
 .hero{
 text-align:center;
-padding:90px 20px 70px;
+padding:90px 20px 60px;
 }
 .hero h2{
-font-size:44px;
+font-size:42px;
 margin-bottom:10px;
 }
 .hero p{
@@ -61,54 +46,48 @@ font-size:18px;
 }
 
 /* CARDS */
+.section{
+padding:60px 5%;
+}
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:30px;
-padding:60px;
-max-width:1200px;
-margin:auto;
+margin-top:40px;
 }
-
 .card{
-background:rgba(255,255,255,0.05);
+background:rgba(255,255,255,.06);
 border-radius:22px;
-padding:30px;
-text-align:center;
-backdrop-filter:blur(10px);
-transition:.35s ease;
-cursor:pointer;
-box-shadow:0 0 0 rgba(0,0,0,0);
+overflow:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,.4);
+transition:.3s;
 }
 .card:hover{
-transform:translateY(-10px) scale(1.03);
-box-shadow:0 20px 50px rgba(0,0,0,.4);
-background:rgba(255,255,255,0.08);
+transform:translateY(-8px);
+background:rgba(255,255,255,.1);
 }
 .card img{
-width:70px;
-height:70px;
-object-fit:contain;
-margin-bottom:20px;
+width:100%;
+height:180px;
+object-fit:cover;
 }
-.card h3{font-size:22px}
+.card h3{
+padding:20px;
+font-size:22px;
+text-align:center;
+}
 
 /* ABOUT */
 .about{
-max-width:1000px;
-margin:80px auto;
-padding:0 30px;
-}
-.about h2{
-font-size:34px;
-margin-bottom:20px;
-}
-.about p{
+max-width:900px;
+margin:auto;
 line-height:1.8;
 opacity:.95;
 }
-.about ul{margin-top:20px}
-.about li{margin:8px 0}
+.about h2{
+font-size:32px;
+margin-bottom:20px;
+}
 
 /* FOOTER */
 footer{
@@ -118,81 +97,83 @@ opacity:.8;
 font-size:14px;
 }
 
-/* WhatsApp */
+/* WHATSAPP */
 .whatsapp{
 position:fixed;
-right:25px;
-bottom:25px;
+right:20px;
+bottom:20px;
 background:#25D366;
 color:#000;
 padding:14px 22px;
-border-radius:40px;
-font-weight:600;
+border-radius:50px;
+font-weight:700;
 text-decoration:none;
-box-shadow:0 10px 30px rgba(0,0,0,.4);
-}
-.whatsapp:hover{opacity:.9}
-
-/* MOBILE */
-@media(max-width:600px){
-.hero h2{font-size:30px}
-.cards{padding:30px}
+box-shadow:0 10px 25px rgba(0,0,0,.4);
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<h1>ANNAB Digital Services</h1>
+<!-- NAV -->
 <nav>
+<h1>ANNAB Digital Services</h1>
+<div>
 <a href="#">Home</a>
 <a href="#games">Entertainment</a>
 <a href="#about">About</a>
 <a href="#contact">Contact</a>
+</div>
 </nav>
-</header>
 
+<!-- HERO -->
 <section class="hero">
 <h2>Entertainment & Casual Games</h2>
 <p>No money • No gambling • Just fun</p>
 </section>
 
-<section class="cards" id="games">
+<!-- GAMES -->
+<section id="games" class="section">
+<div class="cards">
+
 <div class="card">
-<img src="images/chess.png" alt="Chess Game" onerror="this.style.display='none'">
+<img src="./images/chess.jpg" alt="Chess Game">
 <h3>Chess Game</h3>
 </div>
 
 <div class="card">
-<img src="images/fruit.png" alt="Fruit Cutting" onerror="this.style.display='none'">
+<img src="./images/fruit.jpg" alt="Fruit Cutting Game">
 <h3>Fruit Cutting</h3>
 </div>
 
 <div class="card">
-<img src="images/bubble.png" alt="Bubble Game" onerror="this.style.display='none'">
+<img src="./images/bubble.jpg" alt="Bubble Game">
 <h3>Bubble Game</h3>
+</div>
+
 </div>
 </section>
 
-<section class="about" id="about">
+<!-- ABOUT -->
+<section id="about" class="section about">
 <h2>About ANNAB Digital Services</h2>
 <p>
-ANNAB Digital Services is an independent digital platform providing free entertainment & casual games.
-We focus on safe, simple and enjoyable experiences for everyone.
+ANNAB Digital Services is an independent digital platform providing entertainment
+and casual games along with basic digital assistance.
 </p>
-
-<ul>
-<li>✔ No money involvement</li>
-<li>✔ No gambling</li>
-<li>✔ Safe & fun experience</li>
-</ul>
+<p>
+✔ No money involvement<br>
+✔ No gambling activities<br>
+✔ Safe & fun experience for all users
+</p>
 </section>
 
-<footer id="contact">
+<!-- FOOTER -->
+<footer>
 © 2025 ANNAB Digital Services. All rights reserved.
 </footer>
 
+<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">
 Chat on WhatsApp
 </a>
