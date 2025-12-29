@@ -4,50 +4,49 @@
 <meta charset="UTF-8">
 <title>Fruit Cutting Game | ANNAB Digital Services</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
-body{
-    margin:0;
-    background: radial-gradient(circle at top,#0a3cff,#020824);
-    overflow:hidden;
-    font-family: Arial, sans-serif;
-    color:#fff;
-}
-header{
-    text-align:center;
-    padding:15px;
-    font-size:22px;
-    font-weight:bold;
-}
-#score{
-    position:fixed;
-    top:15px;
-    left:15px;
-    font-size:18px;
-    background:rgba(0,0,0,.4);
-    padding:8px 14px;
-    border-radius:8px;
-}
-canvas{
-    display:block;
-}
-.footer{
-    position:fixed;
-    bottom:10px;
-    width:100%;
-    text-align:center;
-    font-size:14px;
-    opacity:.7;
-}
+    body {
+        margin: 0;
+        background: radial-gradient(circle at top, #0b4cff, #020824);
+        font-family: Arial, sans-serif;
+        color: #fff;
+        overflow: hidden;
+    }
+
+    header {
+        padding: 12px 20px;
+        font-size: 20px;
+        font-weight: bold;
+        background: #1148ff;
+    }
+
+    #score {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 18px;
+    }
+
+    canvas {
+        display: block;
+    }
+
+    .hint {
+        position: absolute;
+        bottom: 15px;
+        width: 100%;
+        text-align: center;
+        opacity: 0.7;
+        font-size: 14px;
+    }
 </style>
 </head>
-
 <body>
 
-<header>🍉 Fruit Cutting Game – Just Fun</header>
+<header>🍉 Fruit Cutting Game</header>
 <div id="score">Score: 0</div>
 <canvas id="game"></canvas>
-<div class="footer">© 2025 ANNAB Digital Services | No money • No gambling</div>
+<div class="hint">Swipe / Drag to cut fruits</div>
 
 <script>
 const canvas = document.getElementById("game");
@@ -59,67 +58,96 @@ canvas.height = window.innerHeight;
 let fruits = [];
 let score = 0;
 let slicing = false;
-let mouse = {x:0,y:0};
+let lastX = 0;
+let lastY = 0;
 
-const fruitEmojis = ["🍎","🍊","🍉","🍓","🍍"];
+const fruitTypes = ["🍉","🍎","🍌","🍓","🍊"];
 
-function spawnFruit(){
+function random(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+function spawnFruit() {
     fruits.push({
-        x: Math.random()*canvas.width,
+        x: random(50, canvas.width - 50),
         y: canvas.height + 50,
-        r: 30,
-        speed: Math.random()*2 + 3,
-        emoji: fruitEmojis[Math.floor(Math.random()*fruitEmojis.length)]
+        r: 35,
+        speedY: random(-13, -9),
+        speedX: random(-2, 2),
+        emoji: fruitTypes[Math.floor(Math.random() * fruitTypes.length)]
     });
 }
 
-function drawFruit(f){
+function drawFruit(f) {
     ctx.font = "40px serif";
-    ctx.fillText(f.emoji, f.x-20, f.y+20);
+    ctx.textAlign = "center";
+    ctx.fillText(f.emoji, f.x, f.y);
 }
 
-function update(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
+function update() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    fruits.forEach((f,i)=>{
-        f.y -= f.speed;
+    fruits.forEach((f, i) => {
+        f.y += f.speedY;
+        f.x += f.speedX;
+        f.speedY += 0.25;
+
         drawFruit(f);
 
-        if(slicing){
-            let dx = mouse.x - f.x;
-            let dy = mouse.y - f.y;
-            if(Math.sqrt(dx*dx + dy*dy) < f.r){
-                fruits.splice(i,1);
-                score++;
-                document.getElementById("score").innerText = "Score: " + score;
-            }
-        }
-
-        if(f.y < -50){
-            fruits.splice(i,1);
+        if (f.y > canvas.height + 60) {
+            fruits.splice(i, 1);
         }
     });
 
     requestAnimationFrame(update);
 }
 
-canvas.addEventListener("mousemove", e=>{
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-});
+function cut(x, y) {
+    fruits.forEach((f, i) => {
+        const dist = Math.hypot(f.x - x, f.y - y);
+        if (dist < f.r) {
+            fruits.splice(i, 1);
+            score++;
+            document.getElementById("score").innerText = "Score: " + score;
+        }
+    });
+}
 
-canvas.addEventListener("mousedown", ()=> slicing = true);
-canvas.addEventListener("mouseup", ()=> slicing = false);
-
-canvas.addEventListener("touchmove", e=>{
-    mouse.x = e.touches[0].clientX;
-    mouse.y = e.touches[0].clientY;
+/* Mouse */
+canvas.addEventListener("mousedown", e => {
     slicing = true;
+    lastX = e.clientX;
+    lastY = e.clientY;
 });
 
-canvas.addEventListener("touchend", ()=> slicing = false);
+canvas.addEventListener("mousemove", e => {
+    if (!slicing) return;
+    cut(e.clientX, e.clientY);
+    lastX = e.clientX;
+    lastY = e.clientY;
+});
 
-setInterval(spawnFruit, 800);
+canvas.addEventListener("mouseup", () => slicing = false);
+
+/* Touch */
+canvas.addEventListener("touchstart", e => {
+    slicing = true;
+    lastX = e.touches[0].clientX;
+    lastY = e.touches[0].clientY;
+});
+
+canvas.addEventListener("touchmove", e => {
+    if (!slicing) return;
+    const x = e.touches[0].clientX;
+    const y = e.touches[0].clientY;
+    cut(x, y);
+    lastX = x;
+    lastY = y;
+});
+
+canvas.addEventListener("touchend", () => slicing = false);
+
+setInterval(spawnFruit, 900);
 update();
 </script>
 
