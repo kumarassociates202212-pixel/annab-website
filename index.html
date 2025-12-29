@@ -2,79 +2,90 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>ANNAB Digital Services – Entertainment Games</title>
+<title>ANNAB Digital Services | Entertainment Games</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="ANNAB Digital Services provides safe entertainment & casual games. No money, no gambling, just fun.">
-<meta name="keywords" content="entertainment games, casual games, chess game, fruit cutting game, bubble game">
+<meta name="description" content="Safe entertainment & casual games platform. No money, no gambling, just fun.">
+<meta name="keywords" content="entertainment games, casual games, chess, fruit cutting, bubble game">
 <meta name="author" content="ANNAB Digital Services">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial,sans-serif}
+
 body{
-background:radial-gradient(circle at top,#1e40ff,#020617);
+background:radial-gradient(circle at top,#1e4cff,#020617);
 color:#fff;
 }
 
 /* NAVBAR */
 nav{
 background:#1145ff;
-padding:15px 40px;
+padding:16px 40px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+position:sticky;
+top:0;
+z-index:10;
 }
 nav h1{font-size:22px;font-weight:700}
 nav a{
 color:#fff;
 text-decoration:none;
-margin-left:25px;
+margin-left:24px;
 font-weight:500;
 }
 
 /* HERO */
 .hero{
 text-align:center;
-padding:90px 20px 60px;
+padding:90px 20px 70px;
 }
 .hero h2{
 font-size:42px;
-margin-bottom:10px;
+margin-bottom:12px;
 }
 .hero p{
-opacity:.9;
 font-size:18px;
+opacity:.9;
 }
 
 /* CARDS */
 .section{
-padding:60px 5%;
+padding:70px 6%;
 }
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-margin-top:40px;
+gap:35px;
 }
+
+/* GAME CARD */
 .card{
-background:rgba(255,255,255,.06);
-border-radius:22px;
-overflow:hidden;
-box-shadow:0 15px 40px rgba(0,0,0,.4);
+background:linear-gradient(145deg,#1a2cff,#050b2e);
+border-radius:24px;
+padding:40px 20px;
+text-align:center;
+box-shadow:0 20px 50px rgba(0,0,0,.45);
 transition:.3s;
 }
 .card:hover{
-transform:translateY(-8px);
-background:rgba(255,255,255,.1);
+transform:translateY(-10px);
+box-shadow:0 30px 60px rgba(0,0,0,.6);
 }
-.card img{
-width:100%;
-height:180px;
-object-fit:cover;
+.icon{
+width:70px;
+height:70px;
+margin:0 auto 20px;
+border-radius:50%;
+background:rgba(255,255,255,.15);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:34px;
 }
 .card h3{
-padding:20px;
 font-size:22px;
-text-align:center;
+margin-top:10px;
 }
 
 /* ABOUT */
@@ -100,15 +111,15 @@ font-size:14px;
 /* WHATSAPP */
 .whatsapp{
 position:fixed;
-right:20px;
-bottom:20px;
+right:22px;
+bottom:22px;
 background:#25D366;
 color:#000;
-padding:14px 22px;
+padding:14px 24px;
 border-radius:50px;
 font-weight:700;
 text-decoration:none;
-box-shadow:0 10px 25px rgba(0,0,0,.4);
+box-shadow:0 12px 30px rgba(0,0,0,.5);
 }
 </style>
 </head>
@@ -137,17 +148,17 @@ box-shadow:0 10px 25px rgba(0,0,0,.4);
 <div class="cards">
 
 <div class="card">
-<img src="./images/chess.jpg" alt="Chess Game">
+<div class="icon">♟️</div>
 <h3>Chess Game</h3>
 </div>
 
 <div class="card">
-<img src="./images/fruit.jpg" alt="Fruit Cutting Game">
+<div class="icon">🍉</div>
 <h3>Fruit Cutting</h3>
 </div>
 
 <div class="card">
-<img src="./images/bubble.jpg" alt="Bubble Game">
+<div class="icon">🫧</div>
 <h3>Bubble Game</h3>
 </div>
 
@@ -158,8 +169,8 @@ box-shadow:0 10px 25px rgba(0,0,0,.4);
 <section id="about" class="section about">
 <h2>About ANNAB Digital Services</h2>
 <p>
-ANNAB Digital Services is an independent digital platform providing entertainment
-and casual games along with basic digital assistance.
+ANNAB Digital Services is an independent digital platform offering safe
+entertainment and casual games along with basic digital assistance.
 </p>
 <p>
 ✔ No money involvement<br>
